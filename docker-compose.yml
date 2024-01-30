@@ -22,7 +22,7 @@ services:
 
   #Nginx Service
   webserver:
-    image: nginx:alpine
+    image: nginx:1.25.3-alpine-slim
     container_name: webserver
     restart: unless-stopped
     tty: true
@@ -37,7 +37,8 @@ services:
 
   #MySQL Service
   db:
-    image: mysql:5.7.22
+    platform: linux/x86_64
+    image: mysql:5.7
     container_name: db
     restart: unless-stopped
     tty: true
